@@ -1,0 +1,77 @@
+<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B0000;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#DC143C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#darkGrad)"/>
+  
+  <!-- Decorative lines -->
+  <line x1="0" y1="80" x2="1200" y2="80" stroke="#DC143C" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="320" x2="1200" y2="320" stroke="#DC143C" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Brand of Sacrifice ASCII placeholder - we'll customize this -->
+  <text x="100" y="200" font-family="monospace" font-size="120" fill="#DC143C" opacity="0.15" filter="url(#glow)">⚔</text>
+  
+  <!-- Main Title -->
+  <text x="600" y="100" font-family="'Courier New', monospace" font-size="48" fill="url(#redGlow)" text-anchor="middle" font-weight="bold" filter="url(#glow)">
+    OVENPICKLED
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="140" font-family="'Courier New', monospace" font-size="20" fill="#CCCCCC" text-anchor="middle">
+    Student • Developer • Tech Enthusiast
+  </text>
+  
+  <!-- Age Counter -->
+  <text x="600" y="190" font-family="monospace" font-size="16" fill="#DC143C" text-anchor="middle">
+    ⏱ I've been alive for {{age}}
+  </text>
+  
+  <!-- Stats Section -->
+  <g transform="translate(150, 240)">
+    <!-- Commits -->
+    <rect x="0" y="0" width="220" height="80" fill="#1a0000" stroke="#DC143C" stroke-width="2" rx="8"/>
+    <text x="110" y="30" font-family="monospace" font-size="14" fill="#999999" text-anchor="middle">TOTAL COMMITS</text>
+    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">{{commits}}</text>
+  </g>
+  
+  <g transform="translate(400, 240)">
+    <!-- Stars -->
+    <rect x="0" y="0" width="220" height="80" fill="#1a0000" stroke="#DC143C" stroke-width="2" rx="8"/>
+    <text x="110" y="30" font-family="monospace" font-size="14" fill="#999999" text-anchor="middle">STARS RECEIVED</text>
+    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">{{stars}}</text>
+  </g>
+  
+  <g transform="translate(650, 240)">
+    <!-- Repos -->
+    <rect x="0" y="0" width="220" height="80" fill="#1a0000" stroke="#DC143C" stroke-width="2" rx="8"/>
+    <text x="110" y="30" font-family="monospace" font-size="14" fill="#999999" text-anchor="middle">REPOSITORIES</text>
+    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">{{repos}}</text>
+  </g>
+  
+  <g transform="translate(900, 240)">
+    <!-- Followers -->
+    <rect x="0" y="0" width="220" height="80" fill="#1a0000" stroke="#DC143C" stroke-width="2" rx="8"/>
+    <text x="110" y="30" font-family="monospace" font-size="14" fill="#999999" text-anchor="middle">FOLLOWERS</text>
+    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">{{followers}}</text>
+  </g>
+  
+  <!-- Footer accent -->
+  <line x1="300" y1="360" x2="900" y2="360" stroke="#DC143C" stroke-width="2" opacity="0.5"/>
+</svg>
