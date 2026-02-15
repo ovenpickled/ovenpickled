@@ -63,7 +63,7 @@
   </g>
   
   <!-- Info Section (Right Side) -->
-  <g transform="translate(550, 80)">
+  <g transform="translate(700, 80)">
     <!-- Username@hostname -->
     <text x="0" y="0" class="username">ovenpickled</text><text x="195" y="0" class="hostname">@github</text>
     <text x="0" y="20" class="separator">─────────────────────────────────────────────────</text>
@@ -74,7 +74,7 @@
     
     <!-- Uptime (Age) -->
     <text x="0" y="75" class="label">Uptime:</text>
-    <text x="220" y="75" class="value">21 years, 6 months, 17 days</text>
+    <text x="220" y="75" class="value">{{age}}</text>
     
     <!-- Host -->
     <text x="0" y="100" class="label">Host:</text>
@@ -97,19 +97,19 @@
     
     <!-- Repos -->
     <text x="0" y="275" class="label">Repos:</text>
-    <text x="220" y="275" class="value">31</text>
+    <text x="220" y="275" class="value">{{repos}}</text>
     
     <!-- Stars -->
     <text x="0" y="300" class="label">Stars:</text>
-    <text x="220" y="300" class="value">11</text>
+    <text x="220" y="300" class="value">{{stars}}</text>
     
     <!-- Commits -->
     <text x="0" y="325" class="label">Commits:</text>
-    <text x="220" y="325" class="value">77</text>
+    <text x="220" y="325" class="value">{{commits}}</text>
     
     <!-- Followers -->
     <text x="0" y="350" class="label">Followers:</text>
-    <text x="220" y="350" class="value">6</text>
+    <text x="220" y="350" class="value">{{followers}}</text>
     
     <!-- Contact Section -->
     <text x="0" y="385" class="separator">─ Contact ─────────────────────────────────────────</text>
