@@ -70,7 +70,7 @@
     
     <!-- OS -->
     <text x="0" y="50" class="label">OS:</text>
-    <text x="220" y="50" class="value">GitHub Profile README</text>
+    <text x="220" y="50" class="value">Windows 11, Arch Linux</text>
     
     <!-- Uptime (Age) -->
     <text x="0" y="75" class="label">Uptime:</text>
@@ -82,15 +82,15 @@
     
     <!-- Shell/IDE -->
     <text x="0" y="125" class="label">Shell:</text>
-    <text x="220" y="125" class="value">bash, zsh</text>
+    <text x="220" y="125" class="value">bash</text>
     
     <!-- Languages (Programming) -->
     <text x="0" y="160" class="label">Languages.Programming:</text>
-    <text x="0" y="185" class="value">    [Add your languages here]</text>
+    <text x="0" y="185" class="value">Python, C/C++, Java, Go, Rust, HTML/CSS, JavaScript</text>
     
     <!-- Languages (Real) -->
     <text x="0" y="210" class="label">Languages.Real:</text>
-    <text x="220" y="210" class="value">English, [Add more]</text>
+    <text x="220" y="210" class="value">English, Hindi, Marathi, Japanese</text>
     
     <!-- GitHub Stats Section -->
     <text x="0" y="245" class="separator">─ GitHub Stats ────────────────────────────────────</text>
@@ -118,6 +118,6 @@
     <text x="220" y="415" class="value">github.com/ovenpickled</text>
     
     <text x="0" y="440" class="label">Email:</text>
-    <text x="220" y="440" class="value">[your-email@example.com]</text>
+    <text x="220" y="440" class="value">aryanghate29@gmail.com</text>
   </g>
 </svg>
