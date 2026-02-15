@@ -1,77 +1,123 @@
-<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="1400" height="600" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="lightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f5f5f5;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ffe5e5;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="redGlowLight" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#8B0000;stop-opacity:0.9" />
-      <stop offset="50%" style="stop-color:#DC143C;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:0.9" />
-    </linearGradient>
-    <filter id="glowLight">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <style>
+      .terminal-bg { fill: #f5f5f5; }
+      .ascii-art { fill: #DC143C; font-family: 'Courier New', monospace; font-size: 14px; line-height: 16px; }
+      .label { fill: #8B0000; font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; }
+      .value { fill: #333333; font-family: 'Courier New', monospace; font-size: 16px; }
+      .separator { fill: #999999; font-family: 'Courier New', monospace; font-size: 16px; }
+      .username { fill: #DC143C; font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; }
+      .hostname { fill: #333333; font-family: 'Courier New', monospace; font-size: 18px; }
+    </style>
   </defs>
   
-  <!-- Background -->
-  <rect width="1200" height="400" fill="url(#lightGrad)"/>
+  <!-- Terminal Background -->
+  <rect width="1400" height="600" class="terminal-bg"/>
   
-  <!-- Decorative lines -->
-  <line x1="0" y1="80" x2="1200" y2="80" stroke="#DC143C" stroke-width="1" opacity="0.4"/>
-  <line x1="0" y1="320" x2="1200" y2="320" stroke="#DC143C" stroke-width="1" opacity="0.4"/>
-  
-  <!-- Brand of Sacrifice ASCII placeholder - we'll customize this -->
-  <text x="100" y="200" font-family="monospace" font-size="120" fill="#DC143C" opacity="0.1">⚔</text>
-  
-  <!-- Main Title -->
-  <text x="600" y="100" font-family="'Courier New', monospace" font-size="48" fill="url(#redGlowLight)" text-anchor="middle" font-weight="bold" filter="url(#glowLight)">
-    OVENPICKLED
-  </text>
-  
-  <!-- Subtitle -->
-  <text x="600" y="140" font-family="'Courier New', monospace" font-size="20" fill="#333333" text-anchor="middle">
-    Student • Developer • Tech Enthusiast
-  </text>
-  
-  <!-- Age Counter -->
-  <text x="600" y="190" font-family="monospace" font-size="16" fill="#8B0000" text-anchor="middle">
-    ⏱ I've been alive for 21 years, 6 months, 17 days
-  </text>
-  
-  <!-- Stats Section -->
-  <g transform="translate(150, 240)">
-    <!-- Commits -->
-    <rect x="0" y="0" width="220" height="80" fill="#ffffff" stroke="#DC143C" stroke-width="2" rx="8"/>
-    <text x="110" y="30" font-family="monospace" font-size="14" fill="#666666" text-anchor="middle">TOTAL COMMITS</text>
-    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">77</text>
+  <!-- Brand of Sacrifice ASCII Art (Left Side) -->
+  <g transform="translate(30, 30)">
+    <text x="0" y="0" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="12" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="24" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠆⠀⠀⠀⠀⠀⠀⠀⢹⣦⣼⣿⣿⣴⣾⠃⠀⠀⠀⠀⠀⠀⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="36" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠘⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="48" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="60" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="72" class="ascii-art">⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="84" class="ascii-art">⠀⠀⠀⠀⣀⣴⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀</text>
+    <text x="0" y="96" class="ascii-art">⠀⠀⣠⣾⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣷⣄⠀⠀⠀</text>
+    <text x="0" y="108" class="ascii-art">⠀⠀⠛⢿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⡿⠃⠀⠀</text>
+    <text x="0" y="120" class="ascii-art">⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀</text>
+    <text x="0" y="132" class="ascii-art">⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀</text>
+    <text x="0" y="144" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="156" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="168" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠨⣿⣿⣿⡇⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="180" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣦⣀⠀⠀⢸⣿⣿⣿⡇⠀⠀⢀⣴⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="192" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠿⣿⣿⣿⣿⣿⣷⣄⢸⣿⣿⣿⣇⣠⣶⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="204" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="216" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="228" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="240" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="252" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="264" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⡿⠟⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="276" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⣿⣿⣿⣿⠀⠈⠻⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="288" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⢘⣿⣿⣿⡏⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="300" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⢨⣿⣿⣿⣏⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="312" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="324" class="ascii-art">⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⡯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣷⣦⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="336" class="ascii-art">⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀</text>
+    <text x="0" y="348" class="ascii-art">⠀⣠⣾⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣦⡀⠀</text>
+    <text x="0" y="360" class="ascii-art">⠺⣿⣿⣿⣿⣿⣿⣿⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⡿⠂</text>
+    <text x="0" y="372" class="ascii-art">⠀⠈⠻⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀</text>
+    <text x="0" y="384" class="ascii-art">⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀</text>
+    <text x="0" y="396" class="ascii-art">⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀</text>
+    <text x="0" y="408" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="420" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠰⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="432" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⢸⣿⣿⣿⣇⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="444" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⢸⣿⣿⣿⣟⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="456" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⢸⣿⣿⣿⣿⠀⢀⣴⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="468" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣴⣿⣿⣿⣷⣴⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="480" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="492" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="504" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="516" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
   </g>
   
-  <g transform="translate(400, 240)">
-    <!-- Stars -->
-    <rect x="0" y="0" width="220" height="80" fill="#ffffff" stroke="#DC143C" stroke-width="2" rx="8"/>
-    <text x="110" y="30" font-family="monospace" font-size="14" fill="#666666" text-anchor="middle">STARS RECEIVED</text>
-    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">11</text>
-  </g>
-  
-  <g transform="translate(650, 240)">
+  <!-- Info Section (Right Side) -->
+  <g transform="translate(550, 80)">
+    <!-- Username@hostname -->
+    <text x="0" y="0" class="username">ovenpickled</text><text x="195" y="0" class="hostname">@github</text>
+    <text x="0" y="20" class="separator">─────────────────────────────────────────────────</text>
+    
+    <!-- OS -->
+    <text x="0" y="50" class="label">OS:</text>
+    <text x="220" y="50" class="value">GitHub Profile README</text>
+    
+    <!-- Uptime (Age) -->
+    <text x="0" y="75" class="label">Uptime:</text>
+    <text x="220" y="75" class="value">{{age}}</text>
+    
+    <!-- Host -->
+    <text x="0" y="100" class="label">Host:</text>
+    <text x="220" y="100" class="value">Student, Developer</text>
+    
+    <!-- Shell/IDE -->
+    <text x="0" y="125" class="label">Shell:</text>
+    <text x="220" y="125" class="value">bash, zsh</text>
+    
+    <!-- Languages (Programming) -->
+    <text x="0" y="160" class="label">Languages.Programming:</text>
+    <text x="0" y="185" class="value">    [Add your languages here]</text>
+    
+    <!-- Languages (Real) -->
+    <text x="0" y="210" class="label">Languages.Real:</text>
+    <text x="220" y="210" class="value">English, [Add more]</text>
+    
+    <!-- GitHub Stats Section -->
+    <text x="0" y="245" class="separator">─ GitHub Stats ────────────────────────────────────</text>
+    
     <!-- Repos -->
-    <rect x="0" y="0" width="220" height="80" fill="#ffffff" stroke="#DC143C" stroke-width="2" rx="8"/>
-    <text x="110" y="30" font-family="monospace" font-size="14" fill="#666666" text-anchor="middle">REPOSITORIES</text>
-    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">31</text>
-  </g>
-  
-  <g transform="translate(900, 240)">
+    <text x="0" y="275" class="label">Repos:</text>
+    <text x="220" y="275" class="value">{{repos}}</text>
+    
+    <!-- Stars -->
+    <text x="0" y="300" class="label">Stars:</text>
+    <text x="220" y="300" class="value">{{stars}}</text>
+    
+    <!-- Commits -->
+    <text x="0" y="325" class="label">Commits:</text>
+    <text x="220" y="325" class="value">{{commits}}</text>
+    
     <!-- Followers -->
-    <rect x="0" y="0" width="220" height="80" fill="#ffffff" stroke="#DC143C" stroke-width="2" rx="8"/>
-    <text x="110" y="30" font-family="monospace" font-size="14" fill="#666666" text-anchor="middle">FOLLOWERS</text>
-    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">6</text>
+    <text x="0" y="350" class="label">Followers:</text>
+    <text x="220" y="350" class="value">{{followers}}</text>
+    
+    <!-- Contact Section -->
+    <text x="0" y="385" class="separator">─ Contact ─────────────────────────────────────────</text>
+    
+    <text x="0" y="415" class="label">GitHub:</text>
+    <text x="220" y="415" class="value">github.com/ovenpickled</text>
+    
+    <text x="0" y="440" class="label">Email:</text>
+    <text x="220" y="440" class="value">[your-email@example.com]</text>
   </g>
-  
-  <!-- Footer accent -->
-  <line x1="300" y1="360" x2="900" y2="360" stroke="#DC143C" stroke-width="2" opacity="0.5"/>
 </svg>
