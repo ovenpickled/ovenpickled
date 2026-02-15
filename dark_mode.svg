@@ -40,7 +40,7 @@
   
   <!-- Age Counter -->
   <text x="600" y="190" font-family="monospace" font-size="16" fill="#DC143C" text-anchor="middle">
-    ⏱ I've been alive for {{age}}
+    ⏱ I've been alive for 21 years, 6 months, 17 days
   </text>
   
   <!-- Stats Section -->
@@ -48,28 +48,28 @@
     <!-- Commits -->
     <rect x="0" y="0" width="220" height="80" fill="#1a0000" stroke="#DC143C" stroke-width="2" rx="8"/>
     <text x="110" y="30" font-family="monospace" font-size="14" fill="#999999" text-anchor="middle">TOTAL COMMITS</text>
-    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">{{commits}}</text>
+    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">77</text>
   </g>
   
   <g transform="translate(400, 240)">
     <!-- Stars -->
     <rect x="0" y="0" width="220" height="80" fill="#1a0000" stroke="#DC143C" stroke-width="2" rx="8"/>
     <text x="110" y="30" font-family="monospace" font-size="14" fill="#999999" text-anchor="middle">STARS RECEIVED</text>
-    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">{{stars}}</text>
+    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">11</text>
   </g>
   
   <g transform="translate(650, 240)">
     <!-- Repos -->
     <rect x="0" y="0" width="220" height="80" fill="#1a0000" stroke="#DC143C" stroke-width="2" rx="8"/>
     <text x="110" y="30" font-family="monospace" font-size="14" fill="#999999" text-anchor="middle">REPOSITORIES</text>
-    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">{{repos}}</text>
+    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">31</text>
   </g>
   
   <g transform="translate(900, 240)">
     <!-- Followers -->
     <rect x="0" y="0" width="220" height="80" fill="#1a0000" stroke="#DC143C" stroke-width="2" rx="8"/>
     <text x="110" y="30" font-family="monospace" font-size="14" fill="#999999" text-anchor="middle">FOLLOWERS</text>
-    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">{{followers}}</text>
+    <text x="110" y="60" font-family="'Courier New', monospace" font-size="24" fill="#DC143C" text-anchor="middle" font-weight="bold">6</text>
   </g>
   
   <!-- Footer accent -->
