@@ -1,4 +1,4 @@
-<svg width="1400" height="600" xmlns="http://www.w3.org/2000/svg">
+<svg width="1400" height="700" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .terminal-bg { fill: #f5f5f5; }
@@ -8,14 +8,21 @@
       .separator { fill: #999999; font-family: 'Courier New', monospace; font-size: 16px; }
       .username { fill: #DC143C; font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; }
       .hostname { fill: #333333; font-family: 'Courier New', monospace; font-size: 18px; }
+      .bio-text { fill: #666666; font-family: 'Courier New', monospace; font-size: 14px; font-style: italic; }
+      .section-title { fill: #DC143C; font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; }
     </style>
   </defs>
   
   <!-- Terminal Background -->
-  <rect width="1400" height="600" class="terminal-bg"/>
+  <rect width="1400" height="700" class="terminal-bg"/>
+  
+  <!-- Bio Section (Top) -->
+  <g transform="translate(50, 30)">
+    <text x="0" y="0" class="bio-text">// I train neural networks, and they train my patience</text>
+  </g>
   
   <!-- Brand of Sacrifice ASCII Art (Left Side) -->
-  <g transform="translate(30, 30)">
+  <g transform="translate(30, 80)">
     <text x="0" y="0" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
     <text x="0" y="12" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
     <text x="0" y="24" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠆⠀⠀⠀⠀⠀⠀⠀⢹⣦⣼⣿⣿⣴⣾⠃⠀⠀⠀⠀⠀⠀⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
@@ -65,59 +72,80 @@
   <!-- Info Section (Right Side) -->
   <g transform="translate(700, 80)">
     <!-- Username@hostname -->
-    <text x="0" y="0" class="username">ovenpickled</text><text x="195" y="0" class="hostname">@github</text>
-    <text x="0" y="20" class="separator">─────────────────────────────────────────────────</text>
+    <text x="0" y="0" class="username">ovenpickled@github</text><text x="180" y="0" class="hostname"></text>
+    <text x="0" y="20" class="separator">──────────────────────────────────────────────────────</text>
     
     <!-- OS -->
     <text x="0" y="50" class="label">OS:</text>
-    <text x="220" y="50" class="value">GitHub Profile README</text>
+    <text x="220" y="50" class="value">Windows 11, Arch Linux</text>
     
     <!-- Uptime (Age) -->
     <text x="0" y="75" class="label">Uptime:</text>
-    <text x="220" y="75" class="value">21 years, 6 months, 17 days</text>
+    <text x="220" y="75" class="value">{{age}}</text>
     
     <!-- Host -->
     <text x="0" y="100" class="label">Host:</text>
     <text x="220" y="100" class="value">Student, Developer</text>
     
-    <!-- Shell/IDE -->
+    <!-- Shell -->
     <text x="0" y="125" class="label">Shell:</text>
-    <text x="220" y="125" class="value">bash, zsh</text>
+    <text x="220" y="125" class="value">bash</text>
     
-    <!-- Languages (Programming) -->
-    <text x="0" y="160" class="label">Languages.Programming:</text>
-    <text x="0" y="185" class="value">    [Add your languages here]</text>
+    <!-- IDE -->
+    <text x="0" y="150" class="label">IDE:</text>
+    <text x="220" y="150" class="value">VS Code, Vim</text>
     
-    <!-- Languages (Real) -->
-    <text x="0" y="210" class="label">Languages.Real:</text>
-    <text x="220" y="210" class="value">English, [Add more]</text>
+    <!-- Terminal -->
+    <text x="0" y="175" class="label">Terminal:</text>
+    <text x="220" y="175" class="value">Windows Terminal, Alacritty, Kitty</text>
+    
+    <!-- Languages Section -->
+    <text x="0" y="210" class="separator">─ Languages ───────────────────────────────────────────</text>
+    
+    <!-- Programming Languages -->
+    <text x="0" y="240" class="label">Languages.Programming:</text>
+    <text x="220" y="240" class="value">Python, C/C++, Java, Go, Rust,</text>
+    <text x="220" y="260" class="value">HTML/CSS, JavaScript</text>
+    
+    <!-- Real Languages -->
+    <text x="0" y="285" class="label">Languages.Real:</text>
+    <text x="220" y="285" class="value">English, Hindi, Marathi, Japanese</text>
+    
+    <!-- Hobbies Section -->
+    <text x="0" y="320" class="separator">─ Hobbies ─────────────────────────────────────────────</text>
+    
+    <text x="0" y="350" class="label">Hobbies.Software:</text>
+    <text x="220" y="350" class="value">Playing Guitar, Reading</text>
+    
+    <text x="0" y="375" class="label">Hobbies.Hardware:</text>
+    <text x="220" y="375" class="value">Working Out, Running, MMA</text>
     
     <!-- GitHub Stats Section -->
-    <text x="0" y="245" class="separator">─ GitHub Stats ────────────────────────────────────</text>
+    <text x="0" y="410" class="separator">─ GitHub Stats ────────────────────────────────────────</text>
     
     <!-- Repos -->
-    <text x="0" y="275" class="label">Repos:</text>
-    <text x="220" y="275" class="value">31</text>
+    <text x="0" y="440" class="label">Repos:</text>
+    <text x="220" y="440" class="value">{{repos}}</text>
     
     <!-- Stars -->
-    <text x="0" y="300" class="label">Stars:</text>
-    <text x="220" y="300" class="value">11</text>
+    <text x="0" y="465" class="label">Stars:</text>
+    <text x="220" y="465" class="value">{{stars}}</text>
     
     <!-- Commits -->
-    <text x="0" y="325" class="label">Commits:</text>
-    <text x="220" y="325" class="value">80</text>
+    <text x="0" y="490" class="label">Commits:</text>
+    <text x="220" y="490" class="value">{{commits}}</text>
     
     <!-- Followers -->
-    <text x="0" y="350" class="label">Followers:</text>
-    <text x="220" y="350" class="value">6</text>
+    <text x="0" y="515" class="label">Followers:</text>
+    <text x="220" y="515" class="value">{{followers}}</text>
     
     <!-- Contact Section -->
-    <text x="0" y="385" class="separator">─ Contact ─────────────────────────────────────────</text>
+    <text x="0" y="550" class="separator">─ Contact ─────────────────────────────────────────────</text>
     
-    <text x="0" y="415" class="label">GitHub:</text>
-    <text x="220" y="415" class="value">github.com/ovenpickled</text>
+    <text x="0" y="580" class="label">GitHub:</text>
+    <text x="220" y="580" class="value">github.com/ovenpickled</text>
     
-    <text x="0" y="440" class="label">Email:</text>
-    <text x="220" y="440" class="value">[your-email@example.com]</text>
+    <text x="0" y="605" class="label">Email:</text>
+    <text x="220" y="605" class="value">aryanghate29@gmail.com</text>
   </g>
 </svg>
