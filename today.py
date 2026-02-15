@@ -65,7 +65,16 @@ def graph_commits(start_date, end_date):
     }'''
     variables = {'start_date': start_date,'end_date': end_date, 'login': USER_NAME}
     request = simple_request(graph_commits.__name__, query, variables)
-    return int(request.json()['data']['user']['contributionsCollection']['contributionCalendar']['totalContributions'])
+    
+    try:
+        data = request.json()
+        if data and 'data' in data and data['data'] and 'user' in data['data'] and data['data']['user']:
+            contributions = data['data']['user']['contributionsCollection']['contributionCalendar']['totalContributions']
+            return int(contributions) if contributions is not None else 0
+        return 0
+    except (KeyError, TypeError, ValueError) as e:
+        print(f"Error getting commits: {e}")
+        return 0
 
 
 def graph_repos_stars(count_type, owner_affiliation):
@@ -92,11 +101,19 @@ def graph_repos_stars(count_type, owner_affiliation):
     }'''
     variables = {'owner_affiliation': owner_affiliation, 'login': USER_NAME}
     request = simple_request(graph_repos_stars.__name__, query, variables)
-    if request.status_code == 200:
-        if count_type == 'repos':
-            return request.json()['data']['user']['repositories']['totalCount']
-        elif count_type == 'stars':
-            return sum([repo['node']['stargazers']['totalCount'] for repo in request.json()['data']['user']['repositories']['edges']])
+    
+    try:
+        data = request.json()
+        if data and 'data' in data and data['data'] and 'user' in data['data'] and data['data']['user']:
+            if count_type == 'repos':
+                return data['data']['user']['repositories']['totalCount']
+            elif count_type == 'stars':
+                edges = data['data']['user']['repositories']['edges']
+                return sum([repo['node']['stargazers']['totalCount'] for repo in edges if repo and 'node' in repo])
+        return 0
+    except (KeyError, TypeError, ValueError) as e:
+        print(f"Error getting {count_type}: {e}")
+        return 0
 
 
 def user_getter():
@@ -116,7 +133,15 @@ def user_getter():
     }'''
     variables = {'login': USER_NAME}
     request = simple_request(user_getter.__name__, query, variables)
-    return request.json()['data']['user']
+    
+    try:
+        data = request.json()
+        if data and 'data' in data and data['data'] and 'user' in data['data']:
+            return data['data']['user']
+        return {'followers': {'totalCount': 0}, 'following': {'totalCount': 0}}
+    except (KeyError, TypeError, ValueError) as e:
+        print(f"Error getting user data: {e}")
+        return {'followers': {'totalCount': 0}, 'following': {'totalCount': 0}}
 
 
 def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, follower_data):
@@ -144,35 +169,53 @@ def main():
     """
     print("Starting README update...")
     
-    # Calculate age
-    birthday = datetime.datetime(2004, 7, 29)
-    age = daily_readme(birthday)
-    print(f"Age: {age}")
-    
-    # Get commit count (from account creation to now)
-    start_date = '2020-01-01T00:00:00Z'  # Adjust this to your GitHub account creation date
-    end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
-    commits = graph_commits(start_date, end_date)
-    print(f"Commits: {commits:,}")
-    
-    # Get repository count
-    repos = graph_repos_stars('repos', ['OWNER'])
-    print(f"Repositories: {repos:,}")
-    
-    # Get stars received
-    stars = graph_repos_stars('stars', ['OWNER'])
-    print(f"Stars: {stars:,}")
-    
-    # Get follower count
-    user_data = user_getter()
-    followers = user_data['followers']['totalCount']
-    print(f"Followers: {followers:,}")
-    
-    # Update both SVG files
-    svg_overwrite('dark_mode.svg', age, commits, stars, repos, followers)
-    svg_overwrite('light_mode.svg', age, commits, stars, repos, followers)
-    
-    print("README update complete!")
+    try:
+        # Calculate age
+        birthday = datetime.datetime(2004, 7, 29)
+        age = daily_readme(birthday)
+        print(f"Age: {age}")
+        
+        # Get commit count (from 1 year ago to now - this avoids rate limits and works for newer accounts)
+        end_date = datetime.datetime.now()
+        start_date = end_date - datetime.timedelta(days=365)
+        start_date_str = start_date.strftime('%Y-%m-%dT%H:%M:%SZ')
+        end_date_str = end_date.strftime('%Y-%m-%dT%H:%M:%SZ')
+        
+        commits = graph_commits(start_date_str, end_date_str)
+        print(f"Commits (last year): {commits:,}")
+        
+        # Get repository count
+        repos = graph_repos_stars('repos', ['OWNER'])
+        print(f"Repositories: {repos:,}")
+        
+        # Get stars received
+        stars = graph_repos_stars('stars', ['OWNER'])
+        print(f"Stars: {stars:,}")
+        
+        # Get follower count
+        user_data = user_getter()
+        followers = user_data['followers']['totalCount']
+        print(f"Followers: {followers:,}")
+        
+        # Update both SVG files
+        svg_overwrite('dark_mode.svg', age, commits, stars, repos, followers)
+        svg_overwrite('light_mode.svg', age, commits, stars, repos, followers)
+        
+        print("README update complete!")
+        
+    except Exception as e:
+        print(f"Error in main: {e}")
+        import traceback
+        traceback.print_exc()
+        # Still try to update with default values
+        try:
+            age = daily_readme(datetime.datetime(2004, 7, 29))
+            svg_overwrite('dark_mode.svg', age, 0, 0, 0, 0)
+            svg_overwrite('light_mode.svg', age, 0, 0, 0, 0)
+            print("Updated with default values due to error")
+        except Exception as e2:
+            print(f"Fatal error: {e2}")
+            raise
 
 
 if __name__ == '__main__':
