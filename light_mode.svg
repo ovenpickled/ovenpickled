@@ -81,7 +81,7 @@
     
     <!-- Uptime (Age) -->
     <text x="0" y="75" class="label">Uptime:</text>
-    <text x="220" y="75" class="value">{{age}}</text>
+    <text x="220" y="75" class="value">21 years, 6 months, 17 days</text>
     
     <!-- Host -->
     <text x="0" y="100" class="label">Host:</text>
@@ -125,19 +125,19 @@
     
     <!-- Repos -->
     <text x="0" y="440" class="label">Repos:</text>
-    <text x="220" y="440" class="value">{{repos}}</text>
+    <text x="220" y="440" class="value">31</text>
     
     <!-- Stars -->
     <text x="0" y="465" class="label">Stars:</text>
-    <text x="220" y="465" class="value">{{stars}}</text>
+    <text x="220" y="465" class="value">11</text>
     
     <!-- Commits -->
     <text x="0" y="490" class="label">Commits:</text>
-    <text x="220" y="490" class="value">{{commits}}</text>
+    <text x="220" y="490" class="value">83</text>
     
     <!-- Followers -->
     <text x="0" y="515" class="label">Followers:</text>
-    <text x="220" y="515" class="value">{{followers}}</text>
+    <text x="220" y="515" class="value">6</text>
     
     <!-- Contact Section -->
     <text x="0" y="550" class="separator">─ Contact ─────────────────────────────────────────────</text>
