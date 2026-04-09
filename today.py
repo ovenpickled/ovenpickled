@@ -5,6 +5,7 @@ import os
 from lxml import etree
 import time
 import hashlib
+import shutil
 
 # Fine-grained personal access token with All Repositories access:
 # Account permissions: read:Followers, read:Starring, read:Watching
@@ -146,19 +147,36 @@ def user_getter():
 
 def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, follower_data):
     """
-    Writes to the SVG file
+    Writes to the SVG file, always reading from the .template.svg counterpart
+    so that placeholders are never lost between runs.
     """
-    svg = open(filename, 'r', encoding='utf-8').read()
-    
-    # Update the age
-    svg = svg.replace('{{age}}', age_data)
-    
-    # Update stats
-    svg = svg.replace('{{commits}}', f'{commit_data:,}')
-    svg = svg.replace('{{stars}}', f'{star_data:,}')
-    svg = svg.replace('{{repos}}', f'{repo_data:,}')
+    # Always read from the template — it permanently holds the {{placeholders}}
+    template_filename = filename.replace('.svg', '.template.svg')
+
+    if not os.path.exists(template_filename):
+        raise FileNotFoundError(
+            f"Template file '{template_filename}' not found. "
+            "Please create it by copying your SVG and restoring all "
+            "{{age}}, {{commits}}, {{stars}}, {{repos}}, {{followers}} placeholders."
+        )
+
+    svg = open(template_filename, 'r', encoding='utf-8').read()
+
+    # Sanity-check that every placeholder is present in the template
+    for placeholder in ('{{age}}', '{{commits}}', '{{stars}}', '{{repos}}', '{{followers}}'):
+        if placeholder not in svg:
+            raise ValueError(
+                f"Placeholder '{placeholder}' not found in '{template_filename}'. "
+                "Please restore all placeholders in the template file."
+            )
+
+    # Substitute live values into a fresh copy of the template
+    svg = svg.replace('{{age}}',       age_data)
+    svg = svg.replace('{{commits}}',   f'{commit_data:,}')
+    svg = svg.replace('{{stars}}',     f'{star_data:,}')
+    svg = svg.replace('{{repos}}',     f'{repo_data:,}')
     svg = svg.replace('{{followers}}', f'{follower_data:,}')
-    
+
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(svg)
 
@@ -175,7 +193,7 @@ def main():
         age = daily_readme(birthday)
         print(f"Age: {age}")
         
-        # Get commit count (from 1 year ago to now - this avoids rate limits and works for newer accounts)
+        # Get commit count (from 1 year ago to now)
         end_date = datetime.datetime.now()
         start_date = end_date - datetime.timedelta(days=365)
         start_date_str = start_date.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -197,8 +215,8 @@ def main():
         followers = user_data['followers']['totalCount']
         print(f"Followers: {followers:,}")
         
-        # Update both SVG files
-        svg_overwrite('dark_mode.svg', age, commits, stars, repos, followers)
+        # Update both SVG files (reads from .template.svg, writes to .svg)
+        svg_overwrite('dark_mode.svg',  age, commits, stars, repos, followers)
         svg_overwrite('light_mode.svg', age, commits, stars, repos, followers)
         
         print("README update complete!")
@@ -207,15 +225,7 @@ def main():
         print(f"Error in main: {e}")
         import traceback
         traceback.print_exc()
-        # Still try to update with default values
-        try:
-            age = daily_readme(datetime.datetime(2004, 7, 29))
-            svg_overwrite('dark_mode.svg', age, 0, 0, 0, 0)
-            svg_overwrite('light_mode.svg', age, 0, 0, 0, 0)
-            print("Updated with default values due to error")
-        except Exception as e2:
-            print(f"Fatal error: {e2}")
-            raise
+        raise
 
 
 if __name__ == '__main__':
