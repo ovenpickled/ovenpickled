@@ -32,9 +32,9 @@ jobs:
         run: python today.py
       - name: Commit
         run: |-
-          git add .
-          git diff
+          git add dark_mode.svg light_mode.svg
+          git diff --cached
           git config --global user.email "github-actions-bot@ovenpickled.github.io"
           git config --global user.name "ovenpickled/GitHub-Actions-Bot"
-          git commit -m "Updated README" -a || echo "No changes to commit"
+          git commit -m "Updated README" || echo "No changes to commit"
           git push
