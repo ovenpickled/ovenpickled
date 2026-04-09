@@ -1,0 +1,151 @@
+<svg width="1400" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .terminal-bg { fill: #f5f5f5; }
+      .ascii-art { fill: #DC143C; font-family: 'Courier New', monospace; font-size: 14px; line-height: 16px; }
+      .label { fill: #8B0000; font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; }
+      .value { fill: #333333; font-family: 'Courier New', monospace; font-size: 16px; }
+      .separator { fill: #999999; font-family: 'Courier New', monospace; font-size: 16px; }
+      .username { fill: #DC143C; font-family: 'Courier New', monospace; font-size: 18px; font-weight: bold; }
+      .hostname { fill: #333333; font-family: 'Courier New', monospace; font-size: 18px; }
+      .bio-text { fill: #666666; font-family: 'Courier New', monospace; font-size: 14px; font-style: italic; }
+      .section-title { fill: #DC143C; font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Terminal Background -->
+  <rect width="1400" height="700" class="terminal-bg"/>
+  
+  <!-- Bio Section (Top) -->
+  <g transform="translate(50, 30)">
+    <text x="0" y="0" class="bio-text">// I train neural networks, and they train my patience</text>
+  </g>
+  
+  <!-- Brand of Sacrifice ASCII Art (Left Side) -->
+  <g transform="translate(30, 80)">
+    <text x="0" y="0" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="12" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="24" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠆⠀⠀⠀⠀⠀⠀⠀⢹⣦⣼⣿⣿⣴⣾⠃⠀⠀⠀⠀⠀⠀⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="36" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠘⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="48" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="60" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="72" class="ascii-art">⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="84" class="ascii-art">⠀⠀⠀⠀⣀⣴⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀</text>
+    <text x="0" y="96" class="ascii-art">⠀⠀⣠⣾⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣷⣄⠀⠀⠀</text>
+    <text x="0" y="108" class="ascii-art">⠀⠀⠛⢿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⡿⠃⠀⠀</text>
+    <text x="0" y="120" class="ascii-art">⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀</text>
+    <text x="0" y="132" class="ascii-art">⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀</text>
+    <text x="0" y="144" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="156" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="168" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠨⣿⣿⣿⡇⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="180" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣦⣀⠀⠀⢸⣿⣿⣿⡇⠀⠀⢀⣴⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="192" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠿⣿⣿⣿⣿⣿⣷⣄⢸⣿⣿⣿⣇⣠⣶⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="204" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="216" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="228" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="240" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="252" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="264" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⡿⠟⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="276" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⣿⣿⣿⣿⠀⠈⠻⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="288" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⢘⣿⣿⣿⡏⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="300" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⢨⣿⣿⣿⣏⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="312" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="324" class="ascii-art">⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⡯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣷⣦⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="336" class="ascii-art">⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀</text>
+    <text x="0" y="348" class="ascii-art">⠀⣠⣾⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣦⡀⠀</text>
+    <text x="0" y="360" class="ascii-art">⠺⣿⣿⣿⣿⣿⣿⣿⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⡿⠂</text>
+    <text x="0" y="372" class="ascii-art">⠀⠈⠻⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀</text>
+    <text x="0" y="384" class="ascii-art">⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀</text>
+    <text x="0" y="396" class="ascii-art">⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀</text>
+    <text x="0" y="408" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="420" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠰⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="432" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⢸⣿⣿⣿⣇⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="444" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⢸⣿⣿⣿⣟⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="456" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣄⠀⢸⣿⣿⣿⣿⠀⢀⣴⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="468" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣷⣴⣿⣿⣿⣷⣴⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="480" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="492" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="504" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+    <text x="0" y="516" class="ascii-art">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</text>
+  </g>
+  
+  <!-- Info Section (Right Side) -->
+  <g transform="translate(700, 80)">
+    <!-- Username@hostname -->
+    <text x="0" y="0" class="username">ovenpickled@github</text><text x="180" y="0" class="hostname"></text>
+    <text x="0" y="20" class="separator">──────────────────────────────────────────────────────</text>
+    
+    <!-- OS -->
+    <text x="0" y="50" class="label">OS:</text>
+    <text x="220" y="50" class="value">Windows 11, Arch Linux</text>
+    
+    <!-- Uptime (Age) -->
+    <text x="0" y="75" class="label">Uptime:</text>
+    <text x="220" y="75" class="value">{{age}}</text>
+    
+    <!-- Host -->
+    <text x="0" y="100" class="label">Host:</text>
+    <text x="220" y="100" class="value">Student, Developer</text>
+    
+    <!-- Shell -->
+    <text x="0" y="125" class="label">Shell:</text>
+    <text x="220" y="125" class="value">bash</text>
+    
+    <!-- IDE -->
+    <text x="0" y="150" class="label">IDE:</text>
+    <text x="220" y="150" class="value">VS Code, Vim</text>
+    
+    <!-- Terminal -->
+    <text x="0" y="175" class="label">Terminal:</text>
+    <text x="220" y="175" class="value">Windows Terminal, Alacritty, Kitty</text>
+    
+    <!-- Languages Section -->
+    <text x="0" y="210" class="separator">─ Languages ───────────────────────────────────────────</text>
+    
+    <!-- Programming Languages -->
+    <text x="0" y="240" class="label">Languages.Programming:</text>
+    <text x="220" y="240" class="value">Python, C/C++, Java, Go, Rust,</text>
+    <text x="220" y="260" class="value">HTML/CSS, JavaScript</text>
+    
+    <!-- Real Languages -->
+    <text x="0" y="285" class="label">Languages.Real:</text>
+    <text x="220" y="285" class="value">English, Hindi, Marathi, Japanese</text>
+    
+    <!-- Hobbies Section -->
+    <text x="0" y="320" class="separator">─ Hobbies ─────────────────────────────────────────────</text>
+    
+    <text x="0" y="350" class="label">Hobbies.Software:</text>
+    <text x="220" y="350" class="value">Playing Guitar, Reading</text>
+    
+    <text x="0" y="375" class="label">Hobbies.Hardware:</text>
+    <text x="220" y="375" class="value">Working Out, Running, MMA</text>
+    
+    <!-- GitHub Stats Section -->
+    <text x="0" y="410" class="separator">─ GitHub Stats ────────────────────────────────────────</text>
+    
+    <!-- Repos -->
+    <text x="0" y="440" class="label">Repos:</text>
+    <text x="220" y="440" class="value">{{repos}}</text>
+    
+    <!-- Stars -->
+    <text x="0" y="465" class="label">Stars:</text>
+    <text x="220" y="465" class="value">{{stars}}</text>
+    
+    <!-- Commits -->
+    <text x="0" y="490" class="label">Commits:</text>
+    <text x="220" y="490" class="value">{{commits}}</text>
+    
+    <!-- Followers -->
+    <text x="0" y="515" class="label">Followers:</text>
+    <text x="220" y="515" class="value">{{followers}}</text>
+    
+    <!-- Contact Section -->
+    <text x="0" y="550" class="separator">─ Contact ─────────────────────────────────────────────</text>
+    
+    <text x="0" y="580" class="label">GitHub:</text>
+    <text x="220" y="580" class="value">github.com/ovenpickled</text>
+    
+    <text x="0" y="605" class="label">Email:</text>
+    <text x="220" y="605" class="value">aryanghate29@gmail.com</text>
+  </g>
+</svg>
