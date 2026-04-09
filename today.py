@@ -50,10 +50,31 @@ def simple_request(func_name, query, variables):
     raise Exception(func_name, ' has failed with a', request.status_code, request.text, QUERY_COUNT)
 
 
-def graph_commits(start_date, end_date):
+def graph_commits():
     """
-    Uses GitHub's GraphQL v4 API to return total commit count
+    Uses GitHub's GraphQL v4 API to return total lifetime commit count
+    by querying year by year from account creation to now.
     """
+    # First get the year the account was created
+    query = '''
+    query($login: String!) {
+        user(login: $login) {
+            createdAt
+        }
+    }'''
+    variables = {'login': USER_NAME}
+    request = simple_request(graph_commits.__name__, query, variables)
+
+    try:
+        created_at = request.json()['data']['user']['createdAt']
+        start_year = int(created_at[:4])
+    except (KeyError, TypeError, ValueError):
+        start_year = 2020  # fallback
+
+    current_year = datetime.datetime.now().year
+    total_commits = 0
+
+    # Query each year individually and sum up
     query = '''
     query($start_date: DateTime!, $end_date: DateTime!, $login: String!) {
         user(login: $login) {
@@ -64,18 +85,23 @@ def graph_commits(start_date, end_date):
             }
         }
     }'''
-    variables = {'start_date': start_date,'end_date': end_date, 'login': USER_NAME}
-    request = simple_request(graph_commits.__name__, query, variables)
-    
-    try:
-        data = request.json()
-        if data and 'data' in data and data['data'] and 'user' in data['data'] and data['data']['user']:
+
+    for year in range(start_year, current_year + 1):
+        start = f"{year}-01-01T00:00:00Z"
+        end = f"{year}-12-31T23:59:59Z"
+        variables = {'start_date': start, 'end_date': end, 'login': USER_NAME}
+
+        try:
+            request = simple_request(graph_commits.__name__, query, variables)
+            data = request.json()
             contributions = data['data']['user']['contributionsCollection']['contributionCalendar']['totalContributions']
-            return int(contributions) if contributions is not None else 0
-        return 0
-    except (KeyError, TypeError, ValueError) as e:
-        print(f"Error getting commits: {e}")
-        return 0
+            total_commits += int(contributions) if contributions else 0
+            print(f"  {year}: {contributions} contributions")
+        except Exception as e:
+            print(f"  {year}: failed ({e})")
+            continue
+
+    return total_commits
 
 
 def graph_repos_stars(count_type, owner_affiliation):
@@ -192,15 +218,10 @@ def main():
         birthday = datetime.datetime(2004, 7, 29)
         age = daily_readme(birthday)
         print(f"Age: {age}")
-        
-        # Get commit count (from 1 year ago to now)
-        end_date = datetime.datetime.now()
-        start_date = end_date - datetime.timedelta(days=365)
-        start_date_str = start_date.strftime('%Y-%m-%dT%H:%M:%SZ')
-        end_date_str = end_date.strftime('%Y-%m-%dT%H:%M:%SZ')
-        
-        commits = graph_commits(start_date_str, end_date_str)
-        print(f"Commits (last year): {commits:,}")
+
+        # Get lifetime commit count
+        commits = graph_commits()
+        print(f"Total lifetime commits: {commits:,}")
         
         # Get repository count
         repos = graph_repos_stars('repos', ['OWNER'])
