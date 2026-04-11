@@ -81,7 +81,7 @@
     
     <!-- Uptime (Age) -->
     <text x="0" y="75" class="label">Uptime:</text>
-    <text x="220" y="75" class="value">21 years, 8 months, 12 days</text>
+    <text x="220" y="75" class="value">21 years, 8 months, 13 days</text>
     
     <!-- Host -->
     <text x="0" y="100" class="label">Host:</text>
