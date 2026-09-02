@@ -81,7 +81,7 @@
     
     <!-- Uptime (Age) -->
     <text x="0" y="75" class="label">Uptime:</text>
-    <text x="220" y="75" class="value">22 years, 1 month, 3 days</text>
+    <text x="220" y="75" class="value">22 years, 1 month, 4 days</text>
     
     <!-- Host -->
     <text x="0" y="100" class="label">Host:</text>
@@ -129,7 +129,7 @@
     
     <!-- Stars -->
     <text x="0" y="465" class="label">Stars:</text>
-    <text x="220" y="465" class="value">14</text>
+    <text x="220" y="465" class="value">15</text>
     
     <!-- Commits -->
     <text x="0" y="490" class="label">Commits:</text>
